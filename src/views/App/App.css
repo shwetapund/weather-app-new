@@ -1,0 +1,30 @@
+.card{
+    background-color: white;
+    font-size: 30px;
+    text-align: center;
+    width: 500px;
+    height: auto;
+    padding: 10px;
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 20px;
+}
+.name{
+    text-align: center;
+    color: white;
+    font-size: 50px;
+}
+input{
+    font-size: 30px;
+    margin-left: 100px;
+    opacity: 0.9;
+    border: 1px solid black;
+    box-shadow: 0 0 10px white;
+    border-radius: 20px;
+    padding: 10px;
+}
+.emoji{
+    font-size: 50px;
+    margin-top: -20px;
+    margin-bottom: -30px;
+}
