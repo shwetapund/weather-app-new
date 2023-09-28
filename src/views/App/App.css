@@ -1,18 +1,21 @@
 .card{
-    background-color: white;
+    
     font-size: 30px;
     text-align: center;
-    width: 500px;
-    height: auto;
+    /* width: 500px;  */
+    height: 300px;
     padding: 10px;
     margin: auto;
-    margin-top: 30px;
+    /* margin-top: 30px; */
     border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 .name{
     text-align: center;
     color: white;
-    font-size: 50px;
+    font-size: 30px;
 }
 input{
     font-size: 30px;
@@ -21,10 +24,49 @@ input{
     border: 1px solid black;
     box-shadow: 0 0 10px white;
     border-radius: 20px;
-    padding: 10px;
+    padding: 5px;
+ 
+}
+.city{
+    margin-top: 100px;
 }
 .emoji{
-    font-size: 50px;
-    margin-top: -20px;
-    margin-bottom: -30px;
+
+    /* margin-top: -20px;
+    margin-bottom: -30px; */
+    
+   
+}
+.input{
+    text-align: center;
+}
+.main-container{
+    /* background-color: antiquewhite; */
+     border:1px solid black; 
+    
+}
+.input-box{
+    text-align: center;
+    margin-right: 70px;
+}
+.description-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+.decsription-sub-container{
+transform: scale(1.0); 
+background-color: rgb(246, 246, 250);
+box-shadow: 0 0 3px 5px rgb(3, 91, 125);
+    width: 300px;
+    height: 100px;
+    margin: 20px;
+    text-align: center;
+    border-radius: 20px;
+    /* opacity: 0.9;  */
+}
+.title{
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    
 }

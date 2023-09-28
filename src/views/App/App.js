@@ -1,26 +1,25 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import './App.css'
-import cloud from './images/cloudy.png';
+import cloud from './images/Images/clouds.png';
 export default function App() {
 
   const [weatherData, setWeatherData] = useState({});
   const [city, setCity] = useState("Pune");
   const [weatherDescription, setWeatherDescription] = useState("");
 
- async function loadWeatherData(){
+  async function loadWeatherData() {
 
-    try{
-      const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=6c20b7414d083408cadcb2f16f510ca4`)
+    try {
+      const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=a98a72af7abee04e9ac0e54dc987e8b9 `)
       setWeatherData(response.data);
     }
-    catch(error){
+    catch (error) {
       console.log(error);
     }
-   
 
-   
-  //  console.log(response.data);
+
+
   }
 
 
@@ -33,29 +32,46 @@ export default function App() {
   }, [city])
 
   useEffect(() => {
-   setWeatherDescription(`${weatherData?.weather?.[0]?.main} (${weatherData?.weather?.[0]?.description})`)
+    setWeatherDescription(`${weatherData?.weather?.[0]?.main} (${weatherData?.weather?.[0]?.description})`)
   }, [weatherData])
 
 
   return (
-    <div>
+    <>
 
-      <h1 className='name'>Weather App  </h1>
-
-      <input type="text" value={city} onChange={(e) =>{
-        setCity(e.target.value);
-      }}/>
-       <div className='card'>
-      <p className='city'>City: {weatherData?.name}</p>
-
-      <p>Temperature: {(weatherData?.main?.temp - 273).toFixed(2)} °C</p>
-      <p className='emoji'><img src={cloud}/></p>
-
-      <p>Description: {weatherDescription}</p>
-
-      <p>Visibility: {weatherData?.visibility} meters</p>
+      <div className='input'>
+        <h1 className='name'>Weather App  </h1>
       </div>
-    </div>
+      <div className='main-container'>
+        <p className='input-box'>
+          <input type="text" value={city} onChange={(e) => {
+            setCity(e.target.value);
+          }} />
+        </p>
+
+        <div className='card'>
+          <p className='emoji'><img src={cloud} /></p>
+          <div>
+            <p className='city'>City: {weatherData?.name}</p>
+            <p>Temperature: {(weatherData?.main?.temp - 273).toFixed(1)} °C</p>
+          </div>
+
+        </div>
+
+
+          <div className='description-container'>
+        <div className='decsription-sub-container'>
+          <p><span className='title'>Description</span> 
+            <br/><br/>{weatherDescription}</p>
+        </div>
+
+        <div className='decsription-sub-container'>
+          <p> <span className='title'>Visibility</span>
+            <br/><br/>{weatherData?.visibility} meters</p>
+        </div>
+        </div>
+      </div>
+    </>
   )
 }
 
