@@ -42,35 +42,39 @@ export default function App() {
       <div className='input'>
         <h1 className='name'>Weather App  </h1>
       </div>
-      <div className='main-container'>
-        <p className='input-box'>
-          <input type="text" value={city} onChange={(e) => {
-            setCity(e.target.value);
-          }} />
-        </p>
 
-        <div className='card'>
-          <p className='emoji'><img src={cloud} /></p>
-          <div>
-            <p className='city'>City: {weatherData?.name}</p>
-            <p>Temperature: {(weatherData?.main?.temp - 273).toFixed(1)} °C</p>
-          </div>
+      <p className='input-box'>
+        <input type="text" value={city} onChange={(e) => {
+          setCity(e.target.value);
+        }} />
+      </p>
 
+      <div className='card'>
+        <p className='emoji'><img src={cloud} /></p>
+        <div>
+          <p className='city'>City: {weatherData?.name}</p>
+          <p>Temperature: {(weatherData?.main?.temp - 273).toFixed(1)} °C</p>
         </div>
 
+      </div>
 
-          <div className='description-container'>
+
+      <div className='description-container'>
         <div className='decsription-sub-container'>
-          <p><span className='title'>Description</span> 
-            <br/><br/>{weatherDescription}</p>
+          <p><span className='title'>Description</span>
+            <br /><br />{weatherDescription}</p>
         </div>
 
         <div className='decsription-sub-container'>
           <p> <span className='title'>Visibility</span>
-            <br/><br/>{weatherData?.visibility} meters</p>
+            <br /><br />{weatherData?.visibility} meters</p>
         </div>
+        <div className='decsription-sub-container'>
+          <p> <span className='title'>Humidity</span>
+            <br /><br />{weatherData?.main?.humidity}</p>
         </div>
       </div>
+
     </>
   )
 }
